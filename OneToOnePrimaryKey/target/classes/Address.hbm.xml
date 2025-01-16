@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sample.CollectionMap.Address" table="address">
+		<id name="addressid" type="int">
+			<column name="addressid" />
+			<generator class="foreign">
+			<param name="property">faculty</param>
+			</generator>
+		</id>
+
+		<property name="street" type="string">
+			<column name="street" />
+		</property>
+		
+		<property name="city" type="string">
+			<column name="city" />
+		</property>
+		
+		<one-to-one name="faculty" class="com.sample.CollectionMap.Faculty" constrained="true"/>
+	</class>
+</hibernate-mapping>
