@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sample.CollectionMap.Story" table="story">
+        <id name="storyId" type="int">
+            <column name="storyid"/>
+            <generator class="increment" />
+        </id>
+
+        <property name="info" type="string">
+            <column name="info"/>
+        </property>
+
+        <many-to-one name="writer" class="com.sample.CollectionMap.Writer" column="id" />
+    </class>
+</hibernate-mapping>
