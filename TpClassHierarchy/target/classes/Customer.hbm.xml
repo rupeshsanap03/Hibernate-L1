@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<subclass name="com.sample.CollectionMap.Customer" extends="com.sample.CollectionMap.Person" discriminator-value="CUST">
+
+		<property name="acctype" type="string">
+			<column name="ACC_TYPE" length="12" />
+		</property>
+
+	</subclass>
+</hibernate-mapping>
